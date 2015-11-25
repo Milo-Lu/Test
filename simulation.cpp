@@ -7,7 +7,7 @@ simulation::simulation()
 int simulation::my_simulation(vector<int>& V){
     sort(V.begin(),V.end());
 
-    vector<pair<int,int>> V_odd;
+    vector<pair<int,int>> V_odd;    //seperate the odd and even numbers
     vector<pair<int,int>> V_even;
 
     for(int i=0;i<V.size();++i){
@@ -44,6 +44,7 @@ int simulation::my_simulation(vector<int>& V){
     return sum;
 }
 
+//normal accumulation
 int simulation::acc(const vector<pair<int,int>>& lp){
     int sum{};
 
@@ -53,16 +54,18 @@ int simulation::acc(const vector<pair<int,int>>& lp){
     return sum;
 }
 
+//accumulation. If limit is exceeded, terminate the program
 int simulation::acc2(const vector<pair<int,int>>& lp){
     int sum{};
 
     for(int i=lp.size()-1;i!=-1;--i){
         sum+=pow(-2,lp[i].first)*lp[i].second;
-        if(abs(sum)>1000000) return -1;
+        if(abs(sum)>1000000) throw runtime_error{"error: exceed the limit"};
     }
     return sum;
 }
 
+//remove the counter parts to simplified the calculation
 void simulation::reduce(vector<pair<int,int>>& vp1, vector<pair<int,int>>& vp2){
     for(int i=vp1.size()-1;i!=-1;--i){
         for(int j=vp2.size()-1;j!=-1;--j){
