@@ -20,7 +20,7 @@ int simulation::my_simulation(vector<int>& V){
 
     for(int i=0;i<V.size();++i){
         int index{i};
-        int count{1};       //"count" represents the degree of the duplication of the element
+        int count{1};       //duplicates are removed. "count" represents the degree of the duplication of the element
 
         while(V[i]==V[index+1]){
             ++count;
