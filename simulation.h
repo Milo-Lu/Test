@@ -12,7 +12,6 @@ using namespace std;
 class simulation
 {
     int acc(const vector<pair<int,int>>&);
-    int acc2(const vector<pair<int,int>>&);
     void reduce(vector<pair<int,int>>&,vector<pair<int,int>>&);
 public:
     simulation();
