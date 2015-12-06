@@ -16,7 +16,7 @@ int f(vector<int>& A){
 
     list<pair<int,int>> A2{};
 
-    for(int i=0;i!=A.size();++i) A2.push_back({A[i],1});
+    for(int i=0;i!=A.size();++i) A2.push_back({A[i],1});        //pair<value, sign>
 
     for(list<pair<int,int>>::reverse_iterator it=A2.rbegin();it!=prev(A2.rend());){
         auto it2 = next(it);
