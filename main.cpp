@@ -37,7 +37,7 @@ int f(vector<int>& A){
     int sum{};
 
     for(auto it=A2.begin();it!=A2.end();++it){
-        sum += pow(2,(*it).first) * (*it).second;
+        sum += pow(2,(*it).first) * (*it).second;       //instead of pow(-2,n), pow(2,n) is calculated
 //        if(1000000<sum) throw runtime_error{"error: exceed the limit"};
     }
 
